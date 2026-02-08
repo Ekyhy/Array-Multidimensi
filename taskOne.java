@@ -18,8 +18,6 @@ public class taskOne{
             ArrayMahasiswa[9] = "NIM: 110, Nama: Tiup Sini";
 
             int n = ArrayMahasiswa.length;
-            int m = ArrayMahasiswa.length-1;
-
             int lasIndexRTerisi = 0;
 
             for(int i = 0; i < n; i++){
@@ -53,6 +51,11 @@ public class taskOne{
                                 System.out.println("Index Terisi: " + lasIndexRTerisi);
                                 System.out.println("===============================================");
 
+                                if (lasIndexRTerisi >= n - 1) {
+                                    System.out.println("Array sudah penuh! Tidak bisa menambah data lagi.");
+                                    break;
+                                }
+
                                 System.out.println("Masukkan NIM Mahasiswa Baru: ");
                                 String nimBaru  =  scanner.nextLine();
 
@@ -63,7 +66,7 @@ public class taskOne{
                                 System.out.println("Data Mahasiswa Baru: " + dataMahasiswaBaru);  
                                 System.out.println("===============================================");
                                 
-                                for (int j = ArrayMahasiswa.length - 1; j > 0; j--){
+                                for (int j = n - 1; j > 0; j--){
                                     ArrayMahasiswa[j] = ArrayMahasiswa[j - 1];
 
                                 } 
@@ -71,8 +74,8 @@ public class taskOne{
                                 lasIndexRTerisi++;
 
                                 System.out.println("Data Mahasiswa Setelah Penambahan Data Baru: ");    
-                                for (String mahasiswa : ArrayMahasiswa) {
-                                    System.out.println(" " + mahasiswa);
+                                for (int i = 0; i <= lasIndexRTerisi; i++) {
+                                    System.out.println(" " + ArrayMahasiswa[i]);
                                 }
                                 System.out.println("===============================================");
                                 System.out.println("Index Terisi Saat ini: " + lasIndexRTerisi);
@@ -85,21 +88,36 @@ public class taskOne{
                         System.out.println("Index Terisi: " + lasIndexRTerisi);
                         System.out.println("===============================================");
 
+                        if (lasIndexRTerisi >= ArrayMahasiswa.length - 1) {
+                            System.out.println("Array sudah penuh! Tidak bisa menambah data lagi.");
+                            break;
+                        }
+
+                        System.out.println("Masukkan Index (0-" + (ArrayMahasiswa.length - 1) + "): ");
+                        int indexBaru = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (indexBaru < 0 || indexBaru > ArrayMahasiswa.length - 1) {
+                            System.out.println("Index tidak valid!");
+                            break;
+                        }
+
                         System.out.println("Masukkan NIM Mahasiswa Baru: ");
                         String nimBaru = scanner.nextLine();
-                        System.err.println("Masukkan Nama Mahasiswa Baru: ");
-                        String namaMahasiswa = scanner.next();
+                        System.out.println("Masukkan Nama Mahasiswa Baru: ");
+                        String namaMahasiswa = scanner.nextLine();
 
                         String mahasiswaBaru = "NIM: " + nimBaru + ", Nama: "+ namaMahasiswa;
-                        System.err.println("Data Mahasiswa Baru: "+ mahasiswaBaru);
+                        System.out.println("Data Mahasiswa Baru: "+ mahasiswaBaru);
                         System.out.println("===============================================");
 
-                        ArrayMahasiswa[m] = mahasiswaBaru;
+                        ArrayMahasiswa[indexBaru] = mahasiswaBaru;
+                        if (indexBaru > lasIndexRTerisi) {
+                            lasIndexRTerisi = indexBaru;
+                        }
 
-                        lasIndexRTerisi++;
-
-                        for(String mahasiswa : ArrayMahasiswa){
-                            System.out.println("" + mahasiswa);
+                        for(int i = 0; i <= lasIndexRTerisi; i++){
+                            System.out.println("" + ArrayMahasiswa[i]);
                         }
 
                         System.out.println("Index Terisi Saat Ini: " + lasIndexRTerisi);
@@ -107,16 +125,17 @@ public class taskOne{
                         }
                     
                     case 3:{
-                        for(String mahasiswa : ArrayMahasiswa){
-                            System.out.println(""+ mahasiswa);
+                        System.out.println("Data saat ini:");
+                        for(int i = 0; i <= lasIndexRTerisi; i++){
+                            System.out.println(""+ ArrayMahasiswa[i]);
                         }
 
                             System.out.println("Masukkan NIM yang diganti: ");
                             String cariNIM = scanner.nextLine();
                             boolean ditemukan = false;
 
-                            for(int i = 0; i < n; i++){
-                                if (ArrayMahasiswa[i].contains("NIM: "+cariNIM)) {
+                            for(int i = 0; i <= lasIndexRTerisi; i++){
+                                if (ArrayMahasiswa[i] != null && ArrayMahasiswa[i].contains("NIM: "+cariNIM)) {
                                     
                                     System.out.println("Masukkan NIM baru: ");
                                     String nimBaru = scanner.nextLine();
@@ -128,13 +147,16 @@ public class taskOne{
                                     System.out.println("Data Mahasiswa Baru: "+ mahasiswaBaru);
 
                                     ArrayMahasiswa[i] = mahasiswaBaru;
+                                    ditemukan = true;
                                 }
                             }
 
-                            lasIndexRTerisi++;
+                            if (!ditemukan) {
+                                System.out.println("NIM tidak ditemukan!");
+                            }
 
-                            for(String mahasiswa : ArrayMahasiswa){
-                                System.out.println(" "+ mahasiswa);
+                            for(int i = 0; i <= lasIndexRTerisi; i++){
+                                System.out.println(" "+ ArrayMahasiswa[i]);
                             }
 
                             System.out.println("Index Terisi Saat ini: " + lasIndexRTerisi);
@@ -142,9 +164,14 @@ public class taskOne{
                     }
 
                     case 4:{
+                        if (lasIndexRTerisi < 0) {
+                            System.out.println("Array kosong!");
+                            break;
+                        }
 
-                        for(String mahasiswa : ArrayMahasiswa){
-                            System.out.println("" + mahasiswa);
+                        System.out.println("Data sebelum dihapus:");
+                        for(int i = 0; i <= lasIndexRTerisi; i++){
+                            System.out.println(" " + ArrayMahasiswa[i]);
                         }
 
                         for(int i = 0; i < lasIndexRTerisi; i++){
@@ -154,9 +181,9 @@ public class taskOne{
                         ArrayMahasiswa[lasIndexRTerisi] = null;
                         lasIndexRTerisi--;
             
-
-                        for(String mahasiswa : ArrayMahasiswa){
-                            System.out.println("" + mahasiswa);
+                        System.out.println("Data setelah dihapus:");
+                        for(int i = 0; i <= lasIndexRTerisi; i++){
+                            System.out.println("" + ArrayMahasiswa[i]);
                         }
 
                         System.out.println("Data Index saat ini: " + lasIndexRTerisi);
@@ -168,27 +195,41 @@ public class taskOne{
                             String hapusData = scanner.nextLine();
                             System.out.println("Data yang akan di hapus: "+ hapusData);
 
-                            for(int i = 0; i < lasIndexRTerisi;i++){
-                                if (ArrayMahasiswa[i].contains("NIM: " + hapusData)) {
-                                    for(int j = i+1; j < lasIndexRTerisi; j++){
-                                        ArrayMahasiswa[i] = ArrayMahasiswa[j];
+                            boolean dihapus = false;
+                            for(int i = 0; i <= lasIndexRTerisi; i++){
+                                if (ArrayMahasiswa[i] != null && ArrayMahasiswa[i].contains("NIM: " + hapusData)) {
+                                    for(int j = i; j < lasIndexRTerisi; j++){
+                                        ArrayMahasiswa[j] = ArrayMahasiswa[j + 1];
                                     }
+                                    ArrayMahasiswa[lasIndexRTerisi] = null;
                                     lasIndexRTerisi--;
+                                    dihapus = true;
+                                    break;
                                 }
                             }
-                            for(String mahasiswa : ArrayMahasiswa){
-                                System.out.println("" + mahasiswa);
+                            
+                            if (!dihapus) {
+                                System.out.println("NIM tidak ditemukan!");
+                            }
+                            
+                            for(int i = 0; i <= lasIndexRTerisi; i++){
+                                System.out.println("" + ArrayMahasiswa[i]);
                             }
                             System.out.println("Data index terakhir: "+ lasIndexRTerisi);
                             break;
                     }
 
                     case 6:{
+                        if (lasIndexRTerisi < 0) {
+                            System.out.println("Array kosong!");
+                            break;
+                        }
+                        
                         ArrayMahasiswa[lasIndexRTerisi] = null;
                         lasIndexRTerisi --;
 
-                        for(String mahasiswa : ArrayMahasiswa){
-                            System.out.println("" + mahasiswa);
+                        for(int i = 0; i <= lasIndexRTerisi; i++){
+                            System.out.println("" + ArrayMahasiswa[i]);
                         }
                         System.out.println("Data index terakhir: "+ lasIndexRTerisi);
                         break;
@@ -198,10 +239,22 @@ public class taskOne{
                             for(int i = 0; i < lasIndexRTerisi; i++){
                                 for(int j = i+1; j < lasIndexRTerisi; j++){
                                     if (ArrayMahasiswa[i] != null && ArrayMahasiswa[i].equals(ArrayMahasiswa[j])) {
-                                        String finalTarget = ArrayMahasiswa[i];
-                                        System.out.println(" "+ finalTarget);
+
+                                        for(int k = j; k < lasIndexRTerisi-1; k++){
+                                            ArrayMahasiswa[k] = ArrayMahasiswa[k+1];
+                                        }
+                                        ArrayMahasiswa[lasIndexRTerisi - 1] = null;
+
+                                        lasIndexRTerisi--;
+
+                                        j--;
                                     }
+
                                 }
+                            }
+                            System.out.println("\nData Setelah Dihapus");
+                            for(int i = 0; i < lasIndexRTerisi; i++){
+                                System.out.println(""+ArrayMahasiswa[i]);
                             }
                         break;
                     }
