@@ -1,0 +1,57 @@
+AI Agent:
+
+Tugas Bahasa Java:
+Promt: 	Saya ingin memebenarkan logika pemrograman saya pada persoalan for loop yang menghasilkan nested loop, hal ini saya gunakan untuk mencari kesamaan nilai Array pada List Array Fixed-Size yang telah saya deklarasikan 		      	di awal. Scriptnya seperti berikut ini: 
+				
+
+				for(int i = 0; i < lasIndexRTerisi; i++){
+
+                                	for(int j = i+1; j < lasIndexRTerisi; j++){
+	
+                                    		if (ArrayMahasiswa[i] != null && ArrayMahasiswa[i].equals(ArrayMahasiswa[j])) {
+
+                                        		String finalTarget = ArrayMahasiswa[i];
+
+                                        		System.out.println(" "+ finalTarget);
+
+                                        		ArrayMahasiswa[i]--;
+
+                                  		}
+
+                               		 }
+
+                           	 }
+
+                           	 System.out.println("Data Setelah Dihapus");
+
+                            		for(int i = 0; i<= lasIndexRTerisi; i++){
+
+                                		System.out.println(""+ArrayMahasiswa[i]);
+
+                           		 }
+
+Selebihnya saya menggunakan dokumentasi dari beberapa sumber berikut:
+
+https://www.w3schools.com/java/java_while_loop_do.asp
+https://www.geeksforgeeks.org/dsa/delete-an-element-from-the-beginning-of-an-array/
+https://medium.com/@YodgorbekKomilo/greedy-algorithms-in-java-a-simple-guide-with-real-world-examples-4fce3b2ad0cf
+https://www.geeksforgeeks.org/dsa/delete-first-occurrence-of-given-element-from-an-array/
+https://www.geeksforgeeks.org/java/static-keyword-java/
+https://www.geeksforgeeks.org/dsa/delete-an-element-from-a-given-position-in-an-array/
+https://www.geeksforgeeks.org/dsa/delete-first-occurrence-of-given-element-from-an-array/
+https://www.geeksforgeeks.org/java/how-to-convert-string-to-int-in-java/
+
+
+Tugas Bahasa Python:
+Promt: 	1. Bagaimana cara saya membuat agar list array pada file array saya menjadi fixed-size
+	2. Bagaimana melakukan for loop untuk akese array seperti halnya saya melakukan for(int i =0; i < arr.length;i++) pada Bahasa pemrograman python?
+	3. Jika pada bahas pemrograman lain melakukan do while dan swich case menggunakan do{ } while() dan switch( ){ case1: }, bagaimana saya melakukan hal yang sama dengan menggunakan bahas pemrograman python?
+
+
+Dokumentasi yang saya gunakan untuk mendukung pembuatan kode:
+https://www.geeksforgeeks.org/python/enumerate-in-python/
+https://www.geeksforgeeks.org/python/how-to-create-string-array-in-python/
+https://www.geeksforgeeks.org/python/python-iterate-multiple-lists-simultaneously/
+https://www.geeksforgeeks.org/python/python-list-insert/
+https://www.geeksforgeeks.org/python/how-to-access-index-in-for-loop-python/
+https://www.w3schools.com/python/ref_list_pop.asp
