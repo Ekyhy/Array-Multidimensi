@@ -1,5 +1,5 @@
 # Array Multidimensi
-Merupakan sebuah tugas pada mata perklihan Struktur data yang dimana tugas tersebut melputi pembuatan program dengan ketentuan data aray [fixed-size array]
+Program ini menggunakan ketentuan data aray [fixed-size array]
 dengan kapasitas 10, serta memiliki menu tampilan sebagai berikut:
 Program memiliki menu sebagai berikut:
 1.    Insert at beginning (data baru ditempatkan di blok pertama)
@@ -18,4 +18,9 @@ NB:
 3. kapasitas array baik baris maupun kolom boleh ditambah jumlahnya
 4. tidak boleh menggunakan library untuk operasi array
 5. boleh gunakan AI, tapi sertakan juga prompt
+
+Video Demo dari Project ini:
+1. Java
+
+2. Python
 
