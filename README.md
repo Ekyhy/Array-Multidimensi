@@ -21,6 +21,6 @@ NB:
 
 Video Demo dari Project ini:
 1. Java
-  [![Watch the video]](https://youtu.be/KawohuWXUJ0)
-2. Python
-
+   [![Demo Project Java]](https://youtu.be/KawohuWXUJ0)
+3. Python
+   [![Demo Project Java]](https://youtu.be/rv_ChK_DRdY)
