@@ -23,4 +23,4 @@ Video Demo dari Project ini:
 1. Java
    [![Demo Project Java]](https://youtu.be/KawohuWXUJ0)
 3. Python
-   [![Demo Project Java]](https://youtu.be/rv_ChK_DRdY)
+   [![Demo Project Python]](https://youtu.be/rv_ChK_DRdY)
