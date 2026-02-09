@@ -21,6 +21,6 @@ NB:
 
 Video Demo dari Project ini:
 1. Java
-
+  [![Watch the video]](https://youtu.be/KawohuWXUJ0)
 2. Python
 
